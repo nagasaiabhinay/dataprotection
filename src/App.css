@@ -1,38 +1,74 @@
 .App {
-  text-align: center;
+  text-align: center; /* Center the text for the entire app */
+  font-family: 'Arial', sans-serif; /* Change font family */
+  background-image: url('./bg.avif'); /* Path to your background image */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the background image */
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox layout for centering */
+  flex-direction: column; /* Stack children vertically */
+  position: relative; /* Positioning context for overlay */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  padding: 2rem; /* Add padding for spacing */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 800px; /* Limit width for larger screens */
+  margin: 2rem auto; /* Center the content block with auto margins */
+  position: relative; /* Positioning context for content */
+  z-index: 1; /* Ensure content is above the overlay */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for main title */
+.main-title {
+  font-size: 3rem; /* Large font size */
+  color: #333; /* Darker color for headers */
+  margin-bottom: 1rem; /* Space below title */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Styles for paragraphs */
+.main-text, .sub-text {
+  font-size: 1.5rem; /* Larger font size for paragraphs */
+  color: #666; /* Lighter color for paragraphs */
+  line-height: 1.6; /* Better line spacing for readability */
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles for subheadings */
+.sub-title {
+  font-size: 2rem; /* Increase subheading font size */
+  color: #444; /* Darker subheading color */
+  margin-top: 1.5rem; /* Space above subheading */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Overlay for background image */
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 0; /* Behind the content and navbars */
 }
+
+/* Navbar styles (Make sure to define these) */
+.navbar {
+  position: relative; /* Relative positioning */
+  z-index: 2; /* Ensure navbar is above the overlay */
+}
+
+.nav-links {
+  list-style-type: none; /* Remove bullets */
+  display: flex; /* Flexbox for nav links */
+  justify-content: flex-end; /* Align links to the right */
+}
+
+.contact-button {
+  background-color: orange; /* Button color */
+  font-weight: bold; /* Bold text */
+}
+
+
