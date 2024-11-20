@@ -1,0 +1,5 @@
+com\example\dataprotection\controller\FormController.class
+com\example\dataprotection\DataprotectionApplication.class
+com\example\dataprotection\model\FormEntity.class
+com\example\dataprotection\repository\FormRepository.class
+com\example\dataprotection\service\FormService.class
